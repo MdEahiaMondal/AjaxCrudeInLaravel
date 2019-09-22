@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Image;
 use Yajra\DataTables\DataTables;
 
 class StudentController extends Controller
@@ -53,7 +55,42 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data =[
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'religion' => $request->religion,
+            'avatar' => $request->avatar,
+        ];
+        $originalImage= $request->file('avatar');
+        if ($originalImage){
+            $getImageExtension = $originalImage->getClientOriginalExtension();
+            $randomName = Str::random(40);
+            $finaliImageName = $randomName.'.'.$getImageExtension;
+            $finalDir = public_path('Avatar/'.$finaliImageName);
+            Image::make($originalImage)->resize(150,150)->save($finalDir);
+            $data['avatar'] = $finaliImageName;
+             Student::create($data);
+             return "successufully Done!!";
+        }else{
+            Student::create($data);
+            return "successufully Done!!";
+        }
+
+        /*$thumbnailImage = Image::make($originalImage);
+        $thumbnailPath = public_path().'/thumbnail/';
+        $originalPath = public_path().'/images/';
+        $thumbnailImage->save($originalPath.time().$originalImage->getClientOriginalName());
+        $thumbnailImage->resize(150,150);
+        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName());
+
+        $imagemodel->save();
+
+        return back()->with('success', 'Your images has been successfully Upload');*/
+
+
+
     }
 
     /**

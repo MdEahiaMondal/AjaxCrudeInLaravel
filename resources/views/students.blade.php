@@ -30,42 +30,12 @@
         </tbody>
     </table>
 </div>
-
-<div class="modal fade" id="ajaxModel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modelHeading"></h4>
-            </div>
-            <div class="modal-body">
-                <form id="productForm" name="productForm" class="form-horizontal">
-                    <input type="hidden" name="product_id" id="product_id">
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="" maxlength="50" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Details</label>
-                        <div class="col-sm-12">
-                            <textarea id="detail" name="detail" required="" placeholder="Enter Details" class="form-control"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+@include('form')
 
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -88,8 +58,60 @@
             {data: 'religion', name: 'religion'},
             {data: 'action', name: 'action', orderable: false, searchacle:true},
         ],
-        order: [[0, 'asc']]
+        order: [[0, 'desc']]
     });
+
+    // create  form
+
+    function showForm() {
+        save_method = 'add';
+        $('input[name=_method]').val('POST');
+        $('#DataForm').modal('show');
+        $("#DataForm form")[0].reset();
+        $("#modelTitle").text('Add User');
+        $("#submitButton").text('Add User');
+    }
+
+    // insert data with ajax
+    $(function () {
+        $("#DataForm form").on('submit', function (e) {
+            if (!e.isDefaultPrevented()){
+                if(save_method == 'add'){
+                    url= "{{ url('student') }}"
+                }else{
+                    var id= $("#id").val();
+                    url = "{{url('student')}}"+ '/' + id ;
+                }
+                $.ajax({
+                    url :url,
+                    type: "POST",
+                    data: new FormData($("#DataForm form")[0]),
+                    contentType: false,
+                    processData: false,
+                    success:function (data) {
+                        studentTable.ajax.reload();
+                        $("#DataForm").modal('hide');
+                        Swal.fire(
+                            'Good job!',
+                            'You clicked the button!',
+                            'success'
+                        );
+
+                    },
+                    error: function (data) {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!',
+                        });
+                    }
+                });
+            }
+            return false;
+        });
+    });
+
+
 </script>
 
 </body>
