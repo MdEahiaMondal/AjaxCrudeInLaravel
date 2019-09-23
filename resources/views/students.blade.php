@@ -7,6 +7,11 @@
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
+<style>
+    .error{ /*// only for jquery validation*/
+        color:red;
+    }
+</style>
 <body>
 
 <div class="container">
@@ -73,6 +78,53 @@
         $("#submitButton").text('Add User');// add new title
         $('.studentImage').attr('src','');// when i will add new item then dont need any old value in image field
     }
+
+  var formValidation =  $("#studentForm").validate({
+
+        rules: {
+            name: {
+                required: true,
+                maxlength: 50
+            },
+
+            phone: {
+                required: true,
+                digits:true,
+                minlength: 6,
+                maxlength:12,
+            },
+            email: {
+                required: true,
+                maxlength: 50,
+                email: true,
+            },
+            religion: {
+                required: true,
+            },
+
+        },
+        messages: {
+
+            name: {
+                required: "Please enter name",
+                maxlength: "Your last name maxlength should be 50 characters long.",
+
+            },
+            phone: {
+                required: "Please enter contact number",
+                minlength: "The contact number should be 10 digits",
+                digits: "Please enter only numbers",
+                maxlength: "The contact number should be 10 digits",
+            },
+            email: {
+                required: "Please enter valid email",
+                email: "Please enter valid email",
+                maxlength: "The email name should less than or equal to 50 characters",
+            },
+
+        },
+
+    });
 
     // insert data with ajax
     $(function () {
