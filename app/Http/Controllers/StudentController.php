@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Student;
 use File;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 use Image;
 
@@ -15,7 +17,7 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -42,7 +44,7 @@ class StudentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -53,7 +55,7 @@ class StudentController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -84,7 +86,7 @@ class StudentController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -95,7 +97,7 @@ class StudentController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($id)
     {
@@ -107,17 +109,18 @@ class StudentController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, $id)
     {
 
-        $request->validate([
+       $vali = $request->validate([
             'email'  => 'required|unique:students,email,'.$id.',id',// here in this colum statment is :: when you update this column its will be compear to others column without this column if your table column id is id
             'name' => 'required',
             'phone' => 'required|unique:students,phone,'.$id.',id',
             'religion' => 'required',
         ]);
+
         $students = Student::find($id);
         $students->name  = $request->name;
         $students->email  = $request->email;
@@ -151,17 +154,30 @@ class StudentController extends Controller
             return $students;
         }
 
-
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($id)
     {
-        //
+        $image = Student::find($id);
+        $image_name = $image->avatar;
+        if($image_name){
+            // first check the old image in stor folder
+            if(File::exists('Avatar/'.$image_name)){
+                // delete the file
+                File::delete('Avatar/'.$image_name);
+            }
+            $delete = Student::destroy($id);
+            return $delete;
+        } else{
+            $delete = Student::destroy($id);
+            return $delete;
+        }
+
     }
 }

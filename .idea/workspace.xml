@@ -4,14 +4,11 @@
     <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/28oBRkAOMdvP451UTvi9sigwgeTA3qjZeuZzRf94.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/3r1ABj80vGLeB2XlCv3s3Tj32bCuX0a6UJ1Pa4Rx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/849iCXPVX76whOUwhXpvWSCI4je1Mcvbl1PAFqqk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/Al7TKqyejg4SVDO9yLcQ3ln5H151Xbd1ol0WfoIU.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/LwGKkQJGaQIGZKgQJ3qVwUy9URAAzNz4f2fCThfw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/MWsWmcVsDFsBHw6fNuswxNC7JLAGa0Kv2elc8yzo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/r3KK9OW726aiTG2vVX5V0dw6uqHs5TchnfvbklZi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Avatar/unrSByrvFrQ9YtjweT3Oa5IKVs9XCBwv72zTfTKw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Avatar/4O2lGIsapOBpviZ6J8veUpOef29fBPxmpgHBBDBe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Avatar/7Ii377wDtFKobV1uFTLsBQoSauqCtFJTSavV4mgP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Avatar/8Hnt9g8lwKRigEOuQRoM89wfPZfLiQkVXK1e3AUz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Avatar/B4xogR0KlcRFHrVsS1p0dPPgqVtuOHW6QIz2kFHt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Avatar/tLqX7mA6BZpUGpNRwwQXfvUdSmkuyR4dv5TtZ7hE.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/students.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/students.blade.php" afterDir="false" />
     </list>
@@ -41,10 +38,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+            <state relative-caret-position="1224">
+              <caret line="155" selection-start-line="155" selection-end-line="155" />
               <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
+                <element signature="e#41#57#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/students.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+            <state relative-caret-position="408">
+              <caret line="162" column="26" selection-start-line="162" selection-start-column="16" selection-end-line="162" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -62,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="37" />
+            <state relative-caret-position="264">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -73,6 +70,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>&gt;</find>
+      <find>studentImage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -86,8 +84,8 @@
         <option value="$PROJECT_DIR$/app/Student.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" />
         <option value="$PROJECT_DIR$/resources/views/form.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" />
         <option value="$PROJECT_DIR$/resources/views/students.blade.php" />
       </list>
     </option>
@@ -250,7 +248,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lavravel ajax/learnHanter/laravelAjaxCrude" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -284,19 +282,19 @@
       <option name="presentableId" value="Default" />
       <updated>1569147785985</updated>
       <workItem from="1569147792735" duration="19276000" />
-      <workItem from="1569205829613" duration="5572000" />
+      <workItem from="1569205829613" duration="9353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24848000" />
+    <option name="totallyTimeSpent" value="28629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25321338" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25321338" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32916668" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -366,27 +364,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="264">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/form.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="37" />
+        <state relative-caret-position="1224">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
+          <folding>
+            <element signature="e#41#57#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/students.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+        <state relative-caret-position="408">
+          <caret line="162" column="26" selection-start-line="162" selection-start-column="16" selection-end-line="162" selection-end-column="26" />
         </state>
       </provider>
     </entry>

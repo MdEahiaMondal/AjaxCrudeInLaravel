@@ -5,6 +5,11 @@
                 <h4 class="modal-title" id="modelTitle"></h4>
             </div>
             <div class="modal-body">
+                @if($errors->all())
+                    @foreach($errors->all() as $error)
+                        <p class="alert alert-danger">{{$error}}</p>
+                    @endforeach
+                @endif
                 <form id="studentForm" name="productForm" method="post" class="form-horizontal">
                     @csrf  {{method_field('POST')}}
                     <input type="hidden" name="id" id="id">
@@ -43,11 +48,11 @@
                     <div class="form-group">
                         <label for="religion" class="col-sm-2 control-label">Avatar</label>
                         <div class="col-sm-6">
-                            <input type="file" name="avatar" id="avatar"  >
+                            <input type="file" name="avatar" id="avatar" onchange="preview_image(event)" >
                         </div>
                         
                         <div class="col-sm-6">
-                            <img width="100" src="{{base_path('public/Avatar/')}}" id="studentImage" alt="image">
+                            <img width="100" src="{{base_path('public/Avatar/')}}" id="output_image" class="studentImage" alt="image">
                         </div>
                     </div>
 

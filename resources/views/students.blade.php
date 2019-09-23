@@ -71,7 +71,7 @@
         $("#DataForm form")[0].reset();
         $("#modelTitle").text('Add User');// added new title
         $("#submitButton").text('Add User');// add new title
-        $('#studentImage').attr('src','');// when i will add new item then dont need any old value in image field
+        $('.studentImage').attr('src','');// when i will add new item then dont need any old value in image field
     }
 
     // insert data with ajax
@@ -133,7 +133,7 @@
                 $("#phone").val(data.phone);
                 $("#email").val(data.email);
                 $("#religion").val(data.religion);
-                $('#studentImage').attr('src',"{{asset('Avatar')}}/"+data.avatar+"");
+                $('.studentImage').attr('src',"{{asset('Avatar')}}/"+data.avatar+"");
 
             },
             error: function (data) {
@@ -144,8 +144,70 @@
                 })
             }
         }); // end ajax
+    }// end of edit section
+
+
+    // now finali delete
+    function deleteStudent(id) {
+        save_method = "delete";
+        var csrf_token = $("meta[name=csrf-token]").attr('content')// must be need for delete and use in hedear section in meta tag
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: "{{url('student')}}" + '/' +id,
+                    type: "POST",
+                    data: {
+                        '_method' : 'DELETE',
+                        '_token' : csrf_token,
+                    },
+                    success: function (data) {
+                        studentTable.ajax.reload();
+                        $("#DataForm").modal('hide');
+                        Swal.fire({
+                            position: 'top-middle',
+                            type: 'success',
+                            title: 'Item is deleted!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (data) {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!',
+                        })
+                    }
+
+                }); // end ajax
+
+            }
+        })
+
     }
 
+</script>
+
+{{--Preview Image Before Upload Using JavaScript--}}
+<script type='text/javascript'>
+    function preview_image(event)
+    {
+        var reader = new FileReader();
+        reader.onload = function()
+        {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
 </script>
 
 </body>
