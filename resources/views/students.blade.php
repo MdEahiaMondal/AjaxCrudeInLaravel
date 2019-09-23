@@ -10,7 +10,7 @@
 <body>
 
 <div class="container">
-    <h1>Laravel 5.8 Ajax CRUD tutorial using Datatable</h1>
+    <h2>Laravel 5.8 Ajax CRUD tutorial using Datatable by <h1>Md.Eahia Khan</h1></h2>
     <br>
     <a onclick="showForm()"  class="btn btn-success pull-right"> Create New Product</a>
     <br><br>
@@ -51,7 +51,9 @@
         ajax: "{{url('all/student')}}",
         columns: [
             {data: 'id', name: 'id'},
-            {data: 'avatar', name: 'avatar'},
+            {data: 'avatar', "render" : function ( avatar, type, full) {
+                    return '<img height="50%" width="95%" src="{{ asset('Avatar') }}/'+avatar+'"/>';
+                }},
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
             {data: 'phone', name: 'phone'},
@@ -61,31 +63,31 @@
         order: [[0, 'desc']]
     });
 
-    // create  form
-
+    // show  form model
     function showForm() {
-        save_method = 'add';
-        $('input[name=_method]').val('POST');
-        $('#DataForm').modal('show');
+        save_method = 'add'; // this line for condition to update bellow
+        $('input[name=_method]').val('POST'); // this line all input method POST
+        $('#DataForm').modal('show'); // data form modal show
         $("#DataForm form")[0].reset();
-        $("#modelTitle").text('Add User');
-        $("#submitButton").text('Add User');
+        $("#modelTitle").text('Add User');// added new title
+        $("#submitButton").text('Add User');// add new title
+        $('#studentImage').attr('src','');// when i will add new item then dont need any old value in image field
     }
 
     // insert data with ajax
     $(function () {
-        $("#DataForm form").on('submit', function (e) {
-            if (!e.isDefaultPrevented()){
-                if(save_method == 'add'){
+        $("#DataForm form").on('submit', function (e) { // if click the submitt button action bellow
+            if (!e.isDefaultPrevented()){// this line only for condition
+                if(save_method == 'add'){ // if true this condition will go to insert otherwise go to update
                     url= "{{ url('student') }}"
                 }else{
                     var id= $("#id").val();
                     url = "{{url('student')}}"+ '/' + id ;
                 }
-                $.ajax({
-                    url :url,
+                $.ajax({// start ajax action
+                    url: url,
                     type: "POST",
-                    data: new FormData($("#DataForm form")[0]),
+                    data: new FormData($("#DataForm form")[0]),// send all form data
                     contentType: false,
                     processData: false,
                     success:function (data) {
@@ -93,10 +95,9 @@
                         $("#DataForm").modal('hide');
                         Swal.fire(
                             'Good job!',
-                            'You clicked the button!',
+                            'New Studen Added Successfully !',
                             'success'
                         );
-
                     },
                     error: function (data) {
                         Swal.fire({
@@ -111,6 +112,39 @@
         });
     });
 
+
+    // edit form show with value
+    function editStudent(id) {
+        save_method = 'edit';
+        $('input[name=_method]').val('PATCH');
+        $("#DataForm form")[0].reset();
+
+
+        $.ajax({
+            url: "{{url('student')}}"+ '/' + id + "/edit",
+            type: "GET",
+            dataType:"JSON",
+            success: function (data) {
+                $('#DataForm').modal('show');
+                $("#modelTitle").text('Update User');// added new title
+                $("#submitButton").text('Update');// add new title
+                $("#id").val(data.id);
+                $("#name").val(data.name);
+                $("#phone").val(data.phone);
+                $("#email").val(data.email);
+                $("#religion").val(data.religion);
+                $('#studentImage').attr('src',"{{asset('Avatar')}}/"+data.avatar+"");
+
+            },
+            error: function (data) {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            }
+        }); // end ajax
+    }
 
 </script>
 

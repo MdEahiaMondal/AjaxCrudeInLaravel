@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Image;
+
 use Yajra\DataTables\DataTables;
 
 class StudentController extends Controller
@@ -71,25 +73,10 @@ class StudentController extends Controller
             $finalDir = public_path('Avatar/'.$finaliImageName);
             Image::make($originalImage)->resize(150,150)->save($finalDir);
             $data['avatar'] = $finaliImageName;
-             Student::create($data);
-             return "successufully Done!!";
+            return Student::create($data);
         }else{
-            Student::create($data);
-            return "successufully Done!!";
+            return Student::create($data);
         }
-
-        /*$thumbnailImage = Image::make($originalImage);
-        $thumbnailPath = public_path().'/thumbnail/';
-        $originalPath = public_path().'/images/';
-        $thumbnailImage->save($originalPath.time().$originalImage->getClientOriginalName());
-        $thumbnailImage->resize(150,150);
-        $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName());
-
-        $imagemodel->save();
-
-        return back()->with('success', 'Your images has been successfully Upload');*/
-
-
 
     }
 
@@ -112,7 +99,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+       return Student::find($id);
     }
 
     /**
@@ -124,7 +111,47 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'email'  => 'required|unique:students,email,'.$id.',id',// here in this colum statment is :: when you update this column its will be compear to others column without this column if your table column id is id
+            'name' => 'required',
+            'phone' => 'required|unique:students,phone,'.$id.',id',
+            'religion' => 'required',
+        ]);
+        $students = Student::find($id);
+        $students->name  = $request->name;
+        $students->email  = $request->email;
+        $students->phone  = $request->phone;
+        $students->religion  = $request->religion;
+
+        $name = Student::find($id);
+        $image_name = $name->avatar;
+        $imageCheck = $request->file('avatar');
+        if($imageCheck){
+            // first check the old image in stor folder
+            if(File::exists('Avatar/'.$image_name)){
+                // delete the file
+                File::delete('Avatar/'.$image_name);
+            }
+
+            // after delete the old image  so now new image upload
+            $new_image_name = $request->avatar;
+            $getfile_extension = $new_image_name->getClientOriginalExtension();
+            $make_randomName = Str::random(40);
+            $makeFileName =$make_randomName.'.'.$getfile_extension;
+            $goToRightLocation =public_path('Avatar/'.$makeFileName);
+            Image::make($new_image_name)->resize(150,150)->save($goToRightLocation);
+            $students->avatar  = $makeFileName;
+            $students->update();
+            return $students;
+
+        }else{
+            // without image
+            $students->update();
+            return $students;
+        }
+
+
     }
 
     /**

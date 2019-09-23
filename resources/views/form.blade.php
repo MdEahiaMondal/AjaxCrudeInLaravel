@@ -5,14 +5,14 @@
                 <h4 class="modal-title" id="modelTitle"></h4>
             </div>
             <div class="modal-body">
-                <form id="productForm" name="productForm" method="post" class="form-horizontal">
-                    @csrf
+                <form id="studentForm" name="productForm" method="post" class="form-horizontal">
+                    @csrf  {{method_field('POST')}}
                     <input type="hidden" name="id" id="id">
 
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Enter Name" value="">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="">
                         </div>
                     </div>
 
@@ -43,11 +43,11 @@
                     <div class="form-group">
                         <label for="religion" class="col-sm-2 control-label">Avatar</label>
                         <div class="col-sm-6">
-                            <input type="file" name="avatar" id="avatar" >
+                            <input type="file" name="avatar" id="avatar"  >
                         </div>
                         
                         <div class="col-sm-6">
-                            <img src="" alt="">
+                            <img width="100" src="{{base_path('public/Avatar/')}}" id="studentImage" alt="image">
                         </div>
                     </div>
 
