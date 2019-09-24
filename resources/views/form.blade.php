@@ -5,11 +5,6 @@
                 <h4 class="modal-title" id="modelTitle"></h4>
             </div>
             <div class="modal-body">
-                @if($errors->all())
-                    @foreach($errors->all() as $error)
-                        <p class="alert alert-danger">{{$error}}</p>
-                    @endforeach
-                @endif
                 <form id="studentForm" name="productForm" data-toggle="validator"  method="post" class="form-horizontal">
                     @csrf  {{method_field('POST')}}
                     <input type="hidden" name="id" id="id">
@@ -18,7 +13,6 @@
                         <label for="name" class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-12">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="">
-                            <span id="ERROR" class="text-danger">{{ $errors->first('name') }}</span>
                         </div>
                     </div>
 

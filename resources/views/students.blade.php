@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 <style>
     .error{ /*// only for jquery validation*/
@@ -48,6 +49,31 @@
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
+
+
+/*
+    // this script take data from database
+    var table1 = $("#laravel_table").DataTable({
+        processing: true,
+        serverSide:true,
+        ajax: "",
+        columns: [
+            {data: 'id', name: 'id'},
+            {data: 'name', name: 'name'},
+            {data: 'description', name: 'description'},
+            {data: 'status', "render" : function ( status, type, data, id) {
+                    if (status == 1){
+                        return '<p class="label label-success">' + 'Active' + '</p>';
+                    }else{
+                        return '<p class="label label-info">' + 'Unctive' + '</p>';
+                    }
+
+                }},
+            {data: 'action', name: 'action', orderable: false, searchacle:true},
+        ],
+        order: [[0, 'desc']]
+    });*/
+
 
     // this script take data from database
     var studentTable = $("#laravel_table").DataTable({
