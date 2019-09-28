@@ -36,7 +36,9 @@ class StudentController extends Controller
 
                 return $btn;
             })
-            ->rawColumns(['action'])
+            ->addColumn('checkbox', '<input type="checkbox" name="student_checkbox" class="student_checkbox" id="checkBox" value="{{$id}}">')
+            ->rawColumns(['action', 'checkbox'])
+
             ->make(true);
     }
 
@@ -82,35 +84,15 @@ class StudentController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
+
+
     public function edit($id)
     {
        return Student::find($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return Response
-     */
+
     public function update(Request $request, $id)
     {
 
@@ -180,4 +162,41 @@ class StudentController extends Controller
         }
 
     }
+
+
+    function  CheKDelete(Request $request){
+        $student_id_array = $request->input('id');
+
+       /* $deleteStudent = Student::whereIn($student_id_array);// if come to id with arrary then use whereIn so it check one by one
+        if($deleteStudent->delete()){
+            echo "success";
+        }*/
+         foreach ($student_id_array as $value){
+                 $image = Student::find($value);
+                 $image_name = $image->avatar;
+             if($image_name){
+                 // first check the old image in stor folder
+                 if(File::exists('Avatar/'.$image_name)){
+                     // delete the file
+                     File::delete('Avatar/'.$image_name);
+                 }
+                 $StudentDelete = Student::find($value);
+                 if ($StudentDelete->delete()){
+                     echo "success";
+                 }
+
+             }else{
+                 $StudentDelete = Student::find($value);
+                 if ($StudentDelete->delete()){
+                     echo "success";
+                 }
+             }// end of if else
+
+         }// end of foreach
+
+
+    }// end of main function
+
+
+
 }

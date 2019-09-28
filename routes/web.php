@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::resource('student','StudentController');
 Route::get('all/student','StudentController@allStudent');
+Route::get('checkbox/ItemDelete','StudentController@CheKDelete')->name('checkbox.ItemDelete');

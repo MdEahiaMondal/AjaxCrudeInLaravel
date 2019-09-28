@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <style>
     .error{ /*// only for jquery validation*/
@@ -20,7 +20,7 @@
     <br>
     <a onclick="showForm()"  class="btn btn-success pull-right"> Create New Product</a>
     <br><br>
-    <table class="studentTable table table-bordered data-table" id="laravel_table">
+    <table class="studentTable table table-bordered data-table text-center"  id="laravel_table">
         <thead>
         <tr>
             <th>No</th>
@@ -29,7 +29,9 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Religion</th>>
-            <th>Action</th>
+            <th width="100">Action</th>
+            <th width="100"><button type="button" name="multiDelete" id="multiDelete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                <label for="allChecked" class="control-label"> All </label> <input type="checkbox" name="allSelect" class="allChecked"> </th>
         </tr>
         </thead>
         <tbody>
@@ -47,6 +49,8 @@
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
 
 <script>
 
@@ -90,6 +94,8 @@
             {data: 'phone', name: 'phone'},
             {data: 'religion', name: 'religion'},
             {data: 'action', name: 'action', orderable: false, searchacle:true},
+            {data: 'checkbox', name: 'action', orderable: false, searchacle:true},
+
         ],
         order: [[0, 'desc']]
     });
@@ -272,7 +278,86 @@
 
     }
 
+
+
+
+ $(document).ready(function () {
+        // first whene the page loade then it will be hide
+        $("#multiDelete").hide();
+
+        // all item will be checked
+     $(function () {
+         $(".allChecked").click(function () {
+             if ($(".allChecked").is(':checked')) {
+                 $("input[type=checkbox]").each(function () {
+                     $("input:checkbox").prop('checked', $(this).prop("checked"));
+                 });
+                 $("#multiDelete").show('slow');
+             } else {
+                 $("input[type=checkbox]").each(function () {
+                     $("input:checkbox").prop('checked', $(this).prop("checked"));
+                 });
+                 $("#multiDelete").hide('slow');
+             }
+         });
+     });
+
+        // whene click checkBox thene show
+        $(document).on('click', '#checkBox', function () {
+
+            if ($(".student_checkbox:checked").length > 0)
+            {
+                $("#multiDelete").show('slow');
+            }
+            else
+            {
+                $("#multiDelete").hide('slow');
+            }
+
+        });
+    });
+
+
+
+    $(document).on('click', '#multiDelete', function (e) {
+        var id = [];
+       if (confirm('Are you want to delete this data?!')){
+           $(".student_checkbox:checked").each(function () {
+               id.push($(this).val());
+           });
+
+           if(id.length > 0){
+               $.ajax({
+                   url: "{{route('checkbox.ItemDelete')}}",
+                   method: "get",
+                   data: {id: id},
+                   success: function (data) {
+                       $("#laravel_table").DataTable().ajax.reload();
+                       Swal.fire(
+                           'Good job!',
+                           'Student Deleted Successfully !',
+                           'success'
+                       );
+                   }
+               })
+           }else{
+               Swal.fire({
+                   type: 'error',
+                   title: 'Oops...',
+                   text: 'Please Checked minimum one item!',
+               })
+           }
+
+       }
+
+
+    })
+
+
 </script>
+
+
+
 
 {{--Preview Image Before Upload Using JavaScript--}}
 <script type='text/javascript'>
