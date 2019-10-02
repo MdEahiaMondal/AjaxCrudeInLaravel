@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    student
+                    <small>student and dynamic-field and ...</small>
                 </div>
 
                 <div class="links">
