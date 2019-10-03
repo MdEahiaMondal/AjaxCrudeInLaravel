@@ -23,3 +23,11 @@ Route::get('checkbox/ItemDelete','StudentController@CheKDelete')->name('checkbox
 // create dynamic field Its Route
 Route::get('dynamic-field','DynamicFieldController@showForm');
 Route::post('dynamic-field','DynamicFieldController@insert')->name('dynamic_field.insert');
+
+
+// customer Route
+Route::get('customers','CustomerController@getIndex')->name('get.customer');
+Route::get('customer/data','CustomerController@getData')->name('get.customer.data');
+Route::post('customer/store','CustomerController@postStore')->name('customer.store');
+Route::post('customer/update','CustomerController@postUpdate')->name('customer.update');
+Route::post('customer/delete','CustomerController@postDelete')->name('customer.delete');
