@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,3 +37,20 @@ Route::post('customer/delete','CustomerController@postDelete')->name('customer.d
 
 // friends route with ajax and datatables
 Route::resource('friends','FriendController');
+
+
+/*Route::post('mamuns/post/{id}', function (){
+    return response()->json(\request('id'));
+})->name('mamuns.post');
+
+// it will use in javascript ajax url or route
+var url = '{{ route("mamuns.post", "") }}/'+id;*/
+
+
+/*Route::post('mamuns/post/{id}/update', function (){
+    return response()->json(\request('id'));
+})->name('mamuns.post');*/
+// it will use in javascript ajax url or route
+/*var url = '{{ url("mamuns/post") }}/'+id+'/update';
+
+

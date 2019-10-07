@@ -41,9 +41,8 @@
                         </div>
 
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary" id="saveBtn">
-                            <button type="submit" class="btn btn-primary" id="UpdateBtn">
-                            </button>
+                            <button type="submit" class="btn btn-primary" id="saveBtn"></button>
+                            <button type="submit" class="btn btn-primary" id="UpdateBtn"></button>
                         </div>
                     </form>
                 </div>
