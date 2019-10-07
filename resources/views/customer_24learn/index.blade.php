@@ -86,4 +86,159 @@
 
 @endsection
 
+@section('script')
+    {{--statrt  customer table--}}
+    <script>
+        var getDataUrl = "{{ route('get.customer.data') }}";
+        var modal = $("#CustomerModal");
+        var createtButton = $("#createtButton");
+        var updatButton = $("#updatButton");
+        var modelTitle = $("#modelTitle");
 
+        $.ajaxSetup({
+            headers: {'X-CSRF-Token': '{{ csrf_token() }}'}
+        });
+
+        /*start get data from database by jquery*/
+        function getRecords() {
+            $.get(getDataUrl)
+                .success(function (data) {
+                    var html = "";
+                    data.forEach(function (row) {
+                        html += "<tr>";
+                        html += "<td>" + row.id + "</td>";
+                        html += "<td> <img src='{{asset('images/customer/'."row.avatar")}}' alt='no pic'> </td>";
+                        html += "<td>" + row.name + "</td>";
+                        html += "<td>" + row.email +  "</td>";
+                        html += "<td>" + row.phone + "</td>";
+                        html += "<td>";
+                        html += "<button type='button' class='btn btn-xs btn-warning btnEdit' title='Edit Recode'>Edit</button>";
+                        html += "<button type='button' class='btn btn-xs btn-danger btnDelete' data-id='" + row.id + "' title='Delete Recode'>Delete</button>";
+                        html += "</td> </tr>";
+
+                    });
+                    $('tbody').html(html)
+                })
+        }
+
+        getRecords(); // for view the records
+
+        /*end get data from database by jquery*/
+
+
+        /*start  for create*/
+        function reset() {
+            modal.find('input').each(function () {
+                $(this).val(null);
+            })
+        }
+        function getInputs() {
+            var id = $('input[name="id"]').val();
+            var name = $('input[name="name"]').val();
+            var email = $('input[name="email"]').val();
+            var phone = $('input[name="phone"]').val();
+            var avatar = $('input[name="avatar"]').val();
+
+            return {id: id, name: name, email: email, phone: phone, avatar: avatar};
+        }
+
+        function create() {
+            modal.find(modelTitle).text('New Customer');
+            reset();
+            modal.modal('show');
+            createtButton.show();
+            updatButton.hide();
+        }
+
+        function store() {
+            if (!confirm('Are you sure?')) return;
+            $.ajax({
+                method: "POST",
+                url: "{{ route('customer.store') }}",
+                dataType: "JSON",
+                data: getInputs(),// our created
+                success: function (data) {
+                    console.log(data);
+                    if(data.success){
+                        toastr.success(data.message);
+                    }
+                    reset();// our created
+                    modal.modal('hide');
+                    getRecords();// our created
+
+                },
+                error:function (data) {
+                    if (data.error){
+                        var error = JSON.parse(data.responseText);
+                        var error_lop  = error.errors;
+
+                        for (let elemete in error_lop) {
+                            var itemError =  error_lop[elemete][0];
+                            toastr.error(itemError);
+                        }
+
+                    }
+                }
+            });
+        }
+        /*end  for create*/
+
+
+        /* start for edit*/
+        $('table').on('click', '.btnEdit', function () {
+            modal.find(modelTitle).text('Edit Customer');
+            modal.modal('show');
+            createtButton.hide();
+            updatButton.show();
+
+            var id = $(this).parent().parent().find('td').eq(0).text();
+            var avatar = $(this).parent().parent().find('td').eq(1).text();
+            var name = $(this).parent().parent().find('td').eq(2).text();
+            var email = $(this).parent().parent().find('td').eq(3).text();
+            var phone = $(this).parent().parent().find('td').eq(4).text();
+
+            $('input[name="id"]').val(id);
+            $('input[name="name"]').val(name);
+            $('input[name="email"]').val(email);
+            $('input[name="phone"]').val(phone);
+
+        });
+
+        function update(){
+            if(!confirm('Are you sure?')) return;
+            $.ajax({
+                url: "{{route('customer.update')}}",
+                method: "post",
+                dataType: "JSON",
+                data: getInputs(),
+                success: function (data) {
+                    toastr.success(data.message);
+                    reset();// our created
+                    modal.modal('hide');
+                    getRecords();// our created
+                }
+            })
+        }
+
+        /* end for edit*/
+
+
+
+        /* start for delete*/
+        $('table').on('click', '.btnDelete', function () {
+            if (!confirm('Are your sure ?')) return;
+            var id  = $(this).parent().parent().find('td').eq(0).text();
+            $.ajax({
+                url: "{{route('customer.delete')}}",
+                method: "POST",
+                data:{id: id},
+                success: function (data) {
+                    toastr.warning(data.message);
+                    getRecords();// our created
+                }
+            });
+        })
+        /* end for delete*/
+
+    </script>
+@endsection

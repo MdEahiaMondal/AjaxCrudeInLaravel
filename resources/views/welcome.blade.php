@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <small>student and dynamic-field and ...</small>
+                    <small>student and dynamic-field/customers and ...</small>
                 </div>
 
                 <div class="links">

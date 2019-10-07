@@ -31,3 +31,7 @@ Route::get('customer/data','CustomerController@getData')->name('get.customer.dat
 Route::post('customer/store','CustomerController@postStore')->name('customer.store');
 Route::post('customer/update','CustomerController@postUpdate')->name('customer.update');
 Route::post('customer/delete','CustomerController@postDelete')->name('customer.delete');
+
+
+// friends route with ajax and datatables
+Route::resource('friends','FriendController');

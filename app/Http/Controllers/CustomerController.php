@@ -20,12 +20,12 @@ class CustomerController extends Controller
 
     public function postStore(Request $request)
     {
-
         $validate = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email:customers',
             'phone' => 'required|numeric',
        ]);
+
 
         if ($validate){
             Customer::create($request->all());
