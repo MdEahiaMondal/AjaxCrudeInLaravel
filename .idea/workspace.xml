@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/friends/friendAjax.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/friends/friendAjax.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -181,7 +181,9 @@
       <workItem from="1570324771850" duration="978000" />
       <workItem from="1570337217248" duration="661000" />
       <workItem from="1570406855918" duration="19845000" />
-      <workItem from="1570451018771" duration="1031000" />
+      <workItem from="1570451018771" duration="1149000" />
+      <workItem from="1570462533265" duration="1415000" />
+      <workItem from="1570493042448" duration="4457000" />
     </task>
     <servers />
   </component>

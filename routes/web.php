@@ -39,6 +39,12 @@ Route::post('customer/delete','CustomerController@postDelete')->name('customer.d
 Route::resource('friends','FriendController');
 
 
+
+//live search Route
+Route::get('liveSearch','LiveSearchController@index');
+Route::get('liveSearch/action','LiveSearchController@action')->name('live_search.action');
+
+
 /*Route::post('mamuns/post/{id}', function (){
     return response()->json(\request('id'));
 })->name('mamuns.post');
