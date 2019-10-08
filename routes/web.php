@@ -45,6 +45,14 @@ Route::get('liveSearch','LiveSearchController@index');
 Route::get('liveSearch/action','LiveSearchController@action')->name('live_search.action');
 
 
+
+Route::get('dynamicdependent','DynamicDependentController@index');
+Route::post('dynamicdependent/fetch','DynamicDependentController@fetch')->name('dynamicdependent.fetch');
+
+
+
+
+
 /*Route::post('mamuns/post/{id}', function (){
     return response()->json(\request('id'));
 })->name('mamuns.post');
