@@ -45,11 +45,16 @@ Route::get('liveSearch','LiveSearchController@index');
 Route::get('liveSearch/action','LiveSearchController@action')->name('live_search.action');
 
 
-
+/*................start dynamicdependent select field Route............*/
+// part(1)
 Route::get('dynamicdependent','DynamicDependentController@index');
 Route::post('dynamicdependent/fetch','DynamicDependentController@fetch')->name('dynamicdependent.fetch');
 
+// part(2)
+Route::get('dynamicdependentpart2','DynamicDependentController@Dynamicfieldpart2');
+Route::post('select/fieldItem','DynamicDependentController@fieldItem')->name('select.fieldItem');
 
+/*................end dynamicdependent select field Route............*/
 
 
 

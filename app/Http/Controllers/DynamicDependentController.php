@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Country;
 use App\Country_state_city;
+use App\District;
+use App\Division;
+use App\Union;
+use App\Upazila;
+use App\Village;
 use Illuminate\Http\Request;
 
 class DynamicDependentController extends Controller
@@ -29,5 +35,76 @@ class DynamicDependentController extends Controller
         return $output;
 
     }
+
+
+
+
+    //now we create defarent  idea part2.........
+    public function Dynamicfieldpart2(){
+        $allCountry = Country::all();
+        return view('dynamicDepandent.dynamic_select_field_part2', compact('allCountry'));
+    }
+
+    public function fieldItem(Request $request){
+        $options_id = $request->get('options_id');
+        $selectFieldNameOrId = $request->get('selectFieldNameOrId');
+
+            if ($selectFieldNameOrId == 'countries'){
+                $allDivision = Division::where('country_id',$options_id)->get(); // its array
+
+                $output = '';
+                foreach ($allDivision as $division){
+                    $output .= '<option value="'.$division->id.'">'.$division->name.'</option>';
+                }
+                return $output;
+            }
+
+
+            if ($selectFieldNameOrId == 'divisions'){
+                $allDistrict = District::where('division_id',$options_id)->get(); // its array
+
+                $output = '';
+                foreach ($allDistrict as $District){
+                    $output .= '<option value="'.$District->id.'">'.$District->name.'</option>';
+                }
+                return $output;
+            }
+
+
+           if ($selectFieldNameOrId == 'districtes'){
+                $allUpazila = Upazila::where('district_id',$options_id)->get(); // its array
+
+                $output = '';
+                foreach ($allUpazila as $Upazila){
+                    $output .= '<option value="'.$Upazila->id.'">'.$Upazila->name.'</option>';
+                }
+                return $output;
+            }
+
+          if ($selectFieldNameOrId == 'upazilas'){
+                $allDivision = Union::where('upazila_id',$options_id)->get(); // its array
+
+                $output = '';
+                foreach ($allDivision as $division){
+                    $output .= '<option value="'.$division->id.'">'.$division->name.'</option>';
+                }
+                return $output;
+            }
+
+          if ($selectFieldNameOrId == 'unions'){
+                $allVillage = Village::where('union_id',$options_id)->get(); // its array
+
+                $output = '';
+                foreach ($allVillage as $village){
+                    $output .= '<option value="'.$village->id.'">'.$village->name.'</option>';
+                }
+                return $output;
+            }
+
+
+    }
+
+
+
 
 }
