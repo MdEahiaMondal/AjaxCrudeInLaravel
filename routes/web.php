@@ -57,6 +57,10 @@ Route::post('select/fieldItem','DynamicDependentController@fieldItem')->name('se
 /*................end dynamicdependent select field Route............*/
 
 
+// profile Route
+Route::get('profile','ProfileController@index')->name('profile.index');
+Route::post('profile','ProfileController@store')->name('profile_ajax_crude.store');
+
 
 /*Route::post('mamuns/post/{id}', function (){
     return response()->json(\request('id'));

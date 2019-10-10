@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_10_102513_create_profiles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/1071593696.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/1140388665.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/1242034402.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/2045389274.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/341753040.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/727996247.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/96127428.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DynamicDependentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DynamicDependentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,11 +129,14 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1RiyVMocBuySHKqIGQU7egmbF3c" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../E_Shopper" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -184,7 +198,10 @@
       <workItem from="1570451018771" duration="1149000" />
       <workItem from="1570462533265" duration="1415000" />
       <workItem from="1570493042448" duration="24319000" />
-      <workItem from="1570578386676" duration="4678000" />
+      <workItem from="1570578386676" duration="11497000" />
+      <workItem from="1570671620782" duration="1308000" />
+      <workItem from="1570702101301" duration="9439000" />
+      <workItem from="1570723777935" duration="2267000" />
     </task>
     <servers />
   </component>
@@ -203,5 +220,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
