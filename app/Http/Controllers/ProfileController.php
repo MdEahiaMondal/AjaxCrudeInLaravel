@@ -52,9 +52,16 @@ class ProfileController extends Controller
 
         Profile::create($value);
         return response()->json(['success'=>'Successfully Done !']);
-
-
-
-
     }
+
+
+    public function edit($id){
+        if (\request()->ajax()){
+            $data = Profile::findOrFail($id);// only use index id
+            return response()->json(['data'=>$data]);
+        }
+    }
+
+
+
 }

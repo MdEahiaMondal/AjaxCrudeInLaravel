@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_10_102513_create_profiles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/1071593696.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/1140388665.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/1242034402.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/2045389274.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/341753040.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/727996247.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/96127428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/1321100013.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/933048817.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/980831545.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profileAjaxCrude/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileAjaxCrude/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profileAjaxCrude/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileAjaxCrude/modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,10 +130,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../E_Shopper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -201,7 +201,11 @@
       <workItem from="1570578386676" duration="11497000" />
       <workItem from="1570671620782" duration="1308000" />
       <workItem from="1570702101301" duration="9439000" />
-      <workItem from="1570723777935" duration="2267000" />
+      <workItem from="1570723777935" duration="2505000" />
+      <workItem from="1570786820044" duration="260000" />
+      <workItem from="1570787103787" duration="122000" />
+      <workItem from="1570787237938" duration="805000" />
+      <workItem from="1570788721513" duration="3015000" />
     </task>
     <servers />
   </component>

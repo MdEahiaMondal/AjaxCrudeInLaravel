@@ -88,7 +88,37 @@
 
                 });
             }
-        })
+        });
+
+
+       // start edit the profile
+
+
+       // whene click the edit button show modal with each data of row
+       $(document).on('click','.edit', function () { // if click the edit (class of edit button)
+           var id = $(this).attr('id');// take this id
+           $("#form_result").html(''); // and empty the result message
+
+           $.ajax({
+               url: "profile/"+id+"/edit",// go to this url
+               dataType: "JSON",
+               success: function (result) {// come to result (you cane choose any type of character)
+
+                   // and append the data in input field
+                  $("#first_name").val(result.data.first_name);
+                   $("#last_name").val(result.data.last_name);
+                   $("#store_image").html('<img class="img-thumbnail" width="80" src="{{ asset('images/profiles/') }}/'+result.data.image+'"/>');
+                   $("#store_image").append('<input type="hidden" name="profile_image" value="'+result.data.image+'" />');
+                   $("#row_id").val(result.data.id);
+                   $("#modelHeading").text('Edit Profile');
+                   $("#action_button").text('Update Profile');
+                   $("#action_button").val('edit');
+                   $("#imageAjaxModel").modal('show');
+               }
+           })
+
+       })
+
 
 
     </script>
