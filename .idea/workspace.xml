@@ -2,11 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/1321100013.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/933048817.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profiles/980831545.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/profiles/1598177175.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1044737279.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1071593696.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1116347676.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1140388665.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1200385492.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1242034402.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1321100013.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1520416107.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1635661899.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1686830466.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/1965080258.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/2045389274.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/2136921462.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/341753040.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/444006909.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/600703181.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/628367306.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/727996247.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/933048817.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/profiles/1198473993.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/938882720.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/96127428.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profiles/980831545.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profileAjaxCrude/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileAjaxCrude/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profileAjaxCrude/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileAjaxCrude/modal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -130,7 +151,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../E_Shopper" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -205,7 +226,8 @@
       <workItem from="1570786820044" duration="260000" />
       <workItem from="1570787103787" duration="122000" />
       <workItem from="1570787237938" duration="805000" />
-      <workItem from="1570788721513" duration="3015000" />
+      <workItem from="1570788721513" duration="11720000" />
+      <workItem from="1570840733238" duration="5063000" />
     </task>
     <servers />
   </component>

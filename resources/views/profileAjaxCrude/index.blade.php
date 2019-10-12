@@ -51,6 +51,9 @@
         });
 
         $("#createProfile").click(function () {
+            $("#ProfileForm")[0].reset();// clear the form
+            $(".store_image").html('');// clear
+            $("#form_result").html('');
             $("#imageAjaxModel").modal('show')
         });
 
@@ -88,6 +91,57 @@
 
                 });
             }
+
+
+            // for edit
+            if($("#action_button").val() == 'edit'){
+
+                $.ajax({
+                   url: "{{ route('profile.update') }}",
+                   method: "POST",
+                   data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    dataType: "JSON",
+                    success: function (feeb_back_result) {
+                       /* var html = '';*/
+                       if(feeb_back_result.errors){
+
+                           // i will use toastr
+                           toastr.error(feeb_back_result.errors)
+
+                           // you cane use this for show message in you modal
+                           /*html += "<div class='alert alert-danger'>";
+                           for (var count = 0; count < feeb_back_result.errors.length; count++){
+                               html +=  "<p>"+ feeb_back_result.errors[count] +"</p>"
+                           }
+                           html += "</div>";*/
+                       }
+
+                       if (feeb_back_result.success){
+
+                           toastr.success(feeb_back_result.success);
+
+                          /* html += "<div class='alert alert-success'>"+ feeb_back_result.success +"</div>";*/
+                           $("#ProfileForm")[0].reset();
+                           $(".store_image").html('');// clear
+                           $('#profileTable').DataTable().ajax.reload();
+                           $("#imageAjaxModel").modal('hide');
+                       }
+                       /*$("#form_result").html(html);*/
+                    }
+
+
+                });
+            }
+
+
+
+
+
+
+
         });
 
 
@@ -107,8 +161,8 @@
                    // and append the data in input field
                   $("#first_name").val(result.data.first_name);
                    $("#last_name").val(result.data.last_name);
-                   $("#store_image").html('<img class="img-thumbnail" width="80" src="{{ asset('images/profiles/') }}/'+result.data.image+'"/>');
-                   $("#store_image").append('<input type="hidden" name="profile_image" value="'+result.data.image+'" />');
+                   $(".store_image").html('<img class="img-thumbnail" id="output_image"  width="80" src="{{ asset('images/profiles/') }}/'+result.data.image+'"/>');
+                   $(".store_image").append('<input type="hidden" name="hidden_profile_image" id="hidden_profile_image"  value="'+result.data.image+'" />');
                    $("#row_id").val(result.data.id);
                    $("#modelHeading").text('Edit Profile');
                    $("#action_button").text('Update Profile');
@@ -117,7 +171,13 @@
                }
            })
 
-       })
+       });
+
+
+
+
+
+
 
 
 

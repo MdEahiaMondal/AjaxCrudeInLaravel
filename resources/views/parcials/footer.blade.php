@@ -21,10 +21,12 @@
         {
             var output = document.getElementById('output_image');
             output.src = reader.result;
-        }
+        };
         reader.readAsDataURL(event.target.files[0]);
     }
 </script>
+
+
 
 
 {{--  start dynamic fields--}}

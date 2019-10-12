@@ -28,8 +28,8 @@
                     <div class="form-group">
                         <label class="col-sm-6">Select Profile Image</label>
                         <div class="col-sm-12">
-                            <input type="file" name="profile_image" id="profile_image">
-                            <span id="store_image"></span>
+                            <input  type="file" name="profile_image" id="profile_image">
+                            <span class="store_image"></span>
                         </div>
 
                     </div>

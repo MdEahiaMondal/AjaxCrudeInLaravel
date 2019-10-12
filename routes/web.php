@@ -61,6 +61,7 @@ Route::post('select/fieldItem','DynamicDependentController@fieldItem')->name('se
 Route::get('profiles','ProfileController@index')->name('profile.index');
 Route::post('profile','ProfileController@store')->name('profile_ajax_crude.store');
 Route::get('profile/{id}/edit','ProfileController@edit');
+Route::post('profile/update','ProfileController@update')->name('profile.update');
 
 
 /*Route::post('mamuns/post/{id}', function (){
