@@ -135,19 +135,9 @@
 
                 });
             }
-
-
-
-
-
-
-
         });
 
-
        // start edit the profile
-
-
        // whene click the edit button show modal with each data of row
        $(document).on('click','.edit', function () { // if click the edit (class of edit button)
            var id = $(this).attr('id');// take this id
@@ -176,7 +166,21 @@
 
 
 
+// now we can delete
+       $(document).on('click','.delete', function () {
+           var id = $(this).attr('id');
 
+           $.ajax({
+              url: "{{  route('profile.delete','') }}/"+id,
+               method: "DELETE",
+               dataType: "JSON",
+               data: {id:id},
+               success: function (feed_back_result) {
+                   toastr.success(feed_back_result.success);
+                   $('#profileTable').DataTable().ajax.reload();
+               }
+           });
+       })
 
 
 

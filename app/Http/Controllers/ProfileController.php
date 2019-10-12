@@ -122,5 +122,22 @@ class ProfileController extends Controller
     }
 
 
+    public function delete($id){
+        $check = Profile::findOrFail($id);
+        if ($check->image){
+            if (file_exists('images/profiles/'.$check->image)){
+                unlink('images/profiles/'.$check->image);
+            }else{
+                $check->delete();
+                return response()->json(['success'=>'Deleted Successfully Done !']);
+            }
+        }
+        $check->delete();
+        return response()->json(['success'=>'Deleted Successfully Done !']);
+
+
+    }
+
+
 
 }
