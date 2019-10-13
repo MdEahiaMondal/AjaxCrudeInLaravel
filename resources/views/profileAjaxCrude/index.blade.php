@@ -141,7 +141,7 @@
        // whene click the edit button show modal with each data of row
        $(document).on('click','.edit', function () { // if click the edit (class of edit button)
            var id = $(this).attr('id');// take this id
-           $("#form_result").html(''); // and empty the result message
+           $("#form_result").html(''); // and empty the result message field
 
            $.ajax({
                url: "profile/"+id+"/edit",// go to this url
