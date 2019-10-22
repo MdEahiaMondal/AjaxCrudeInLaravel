@@ -318,11 +318,11 @@
     }
     })
     }else{
-    Swal.fire({
-    type: 'error',
-    title: 'Oops...',
-    text: 'Please Checked minimum one item!',
-    })
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Please Checked minimum one item!',
+        })
     }
 
     }

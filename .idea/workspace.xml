@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
+    <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="line going to right position">
+      <change afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TreeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_19_135349_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_22_040655_create_posts_comments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/category/categories.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/category/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/commentsDisplay.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/treeView/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/treeView/treeview.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profileAjaxCrude/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileAjaxCrude/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parcials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parcials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/students.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/students.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +46,14 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,7 +156,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../E_Shopper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../fressh laravel" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -131,6 +170,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\xampp\htdocs\runningGitHub project\AjaxCrudeInLaravel\database\migrations" />
+      <recent name="F:\xampp\htdocs\runningGitHub project\AjaxCrudeInLaravel\resources\views\treeView" />
       <recent name="F:\xmp\xm\htdocs\runningGitHub project\AjaxCrudeInLaravel\resources\views\layouts" />
     </key>
   </component>
@@ -196,7 +237,23 @@
       <workItem from="1570788721513" duration="11720000" />
       <workItem from="1570840733238" duration="7077000" />
       <workItem from="1570930961773" duration="5167000" />
-      <workItem from="1570963750610" duration="7848000" />
+      <workItem from="1570963750610" duration="8939000" />
+      <workItem from="1571021653674" duration="597000" />
+      <workItem from="1571031212364" duration="924000" />
+      <workItem from="1571068062028" duration="1821000" />
+      <workItem from="1571103720040" duration="5320000" />
+      <workItem from="1571153958171" duration="1206000" />
+      <workItem from="1571241414823" duration="1401000" />
+      <workItem from="1571269508846" duration="1951000" />
+      <workItem from="1571329110276" duration="591000" />
+      <workItem from="1571389053448" duration="4784000" />
+      <workItem from="1571490015325" duration="6967000" />
+      <workItem from="1571536579683" duration="5820000" />
+      <workItem from="1571554007800" duration="5490000" />
+      <workItem from="1571648993860" duration="3633000" />
+      <workItem from="1571672650630" duration="1176000" />
+      <workItem from="1571717171831" duration="3542000" />
+      <workItem from="1571748640707" duration="5902000" />
     </task>
     <task id="LOCAL-00001" summary="edit successfully done with ajax in profile">
       <created>1570845897714</created>
@@ -212,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570847256710</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="image and item deleted successfully done with ajax in profile">
+      <created>1571000016728</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571000016728</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +299,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="edit successfully done with ajax in profile" />
     <MESSAGE value="image and item deleted successfully done with ajax in profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="image and item deleted successfully done with ajax in profile" />
+    <MESSAGE value="line going to right position" />
+    <option name="LAST_COMMIT_MESSAGE" value="line going to right position" />
   </component>
 </project>

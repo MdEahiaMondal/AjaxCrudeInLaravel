@@ -65,6 +65,22 @@ Route::post('profile/update','ProfileController@update')->name('profile.update')
 Route::delete('profile/delete/{id}','ProfileController@delete')->name('profile.delete');
 
 
+// category Controller Route
+Route::get('categories/form','CategoryController@showForm')->name('categories.form');
+Route::resource('categories','CategoryController');
+
+
+// post and Comment
+Route::resource('posts','PostController');
+Route::resource('comments','CommentController');
+
+
+
+Route::get('jquery-tree-view',array('as'=>'jquery.treeview','uses'=>'TreeController@treeView'));
+
+
+
+
 /*Route::post('mamuns/post/{id}', function (){
     return response()->json(\request('id'));
 })->name('mamuns.post');
@@ -78,5 +94,13 @@ var url = '{{ route("mamuns.post", "") }}/'+id;*/
 })->name('mamuns.post');*/
 // it will use in javascript ajax url or route
 /*var url = '{{ url("mamuns/post") }}/'+id+'/update';
+*/
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
