@@ -44,7 +44,7 @@
                         <h3 class="text-center text-success">ItSolutionStuff.com</h3>
                         <br/>
                         <h2>{{ $post->title }}</h2>
-                        <p>
+                        <p class="commentText">
                             {{ $post->body }}
                         </p>
                         <hr />
@@ -95,13 +95,26 @@
     <script>
        $(document).ready(function(){
 
+           // start only text show more and less
+           var commentText = $('.commentText').text(); // it's take all text
+           if(commentText.length < 100) return; // if charecter less then 100 it will not work
 
-            $(".CommentReplay").on('click', '.singleCommentReply', function () {
-                var comment_id = $(this).data('id');
-                var id = $("input[name='parent_id']").val();
-                    alert(id);
-                   /*$(".replayFormHidden").toggle();*/
-            });
+           $(".commentText").html( // append this tag after 100 charecter
+               commentText.slice(0,300)+'<span>... </span><a href="#"  class="more CommentMore">More</a>'+
+               '<span class="hidden" style="display:none;">'+ commentText.slice(100,commentText.length)+' <a href="#" class="less CommentMore">Less</a></span>'
+           );
+
+           $(this).find('.CommentMore').click(function() {
+               if ( $(this).is('.more') ) {
+                   $(".commentText").find('.hidden').show();
+                   $(".commentText").find('.more').hide();
+               } else if ( $(this).is('.less') ) {
+                   $('.commentText').find('.hidden').hide();
+                   $('.commentText').find('.more').show();
+               }
+           });
+           // close only text show more and less
+
 
         });
 
