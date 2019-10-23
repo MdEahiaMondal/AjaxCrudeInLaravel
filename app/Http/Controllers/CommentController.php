@@ -14,9 +14,15 @@ class CommentController extends Controller
            'body' => 'required',
        ]);
 
-       $input = $request->all();
-       $input['user_id'] = Auth::id();
-       Comment::create($input);
-       return back();
+       if (Auth::check()){
+           $input = $request->all();
+           $input['user_id'] = Auth::id();
+           Comment::create($input);
+           return back();
+       }else{
+           return redirect()->route('login');
+       }
+
+
    }
 }

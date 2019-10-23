@@ -264,59 +264,59 @@
 
     // all item will be checked
     $(function () {
-    $(".allChecked").click(function () {
-    if ($(".allChecked").is(':checked')) {
-    $("input[type=checkbox]").each(function () {
-    $("input:checkbox").prop('checked', $(this).prop("checked"));
-    });
-    $("#multiDelete").show('slow');
-    } else {
-    $("input[type=checkbox]").each(function () {
-    $("input:checkbox").prop('checked', $(this).prop("checked"));
-    });
-    $("#multiDelete").hide('slow');
-    }
-    });
+        $(".allChecked").click(function () {
+            if ($(".allChecked").is(':checked')) {
+                $("input[type=checkbox]").each(function () {
+                $("input:checkbox").prop('checked', $(this).prop("checked"));
+                });
+                $("#multiDelete").show('slow');
+            } else {
+                $("input[type=checkbox]").each(function () {
+                $("input:checkbox").prop('checked', $(this).prop("checked"));
+                });
+                $("#multiDelete").hide('slow');
+            }
+        });
     });
 
     // whene click checkBox thene show
     $(document).on('click', '#checkBox', function () {
 
-    if ($(".student_checkbox:checked").length > 0)
-    {
-    $("#multiDelete").show('slow');
-    }
-    else
-    {
-    $("#multiDelete").hide('slow');
-    }
+        if ($(".student_checkbox:checked").length > 0)
+        {
+        $("#multiDelete").show('slow');
+        }
+        else
+        {
+        $("#multiDelete").hide('slow');
+        }
 
-    });
+        });
     });
 
 
 
     $(document).on('click', '#multiDelete', function (e) {
-    var id = [];
-    if (confirm('Are you want to delete this data?!')){
-    $(".student_checkbox:checked").each(function () {
-    id.push($(this).val());
+        var id = [];
+        if (confirm('Are you want to delete this data?!')){
+        $(".student_checkbox:checked").each(function () {
+        id.push($(this).val());
     });
 
     if(id.length > 0){
-    $.ajax({
-    url: "{{route('checkbox.ItemDelete')}}",
-    method: "get",
-    data: {id: id},
-    success: function (data) {
-    $("#laravel_table").DataTable().ajax.reload();
-    Swal.fire(
-    'Good job!',
-    'Student Deleted Successfully !',
-    'success'
-    );
-    }
-    })
+        $.ajax({
+            url: "{{route('checkbox.ItemDelete')}}",
+            method: "get",
+            data: {id: id},
+            success: function (data) {
+                $("#laravel_table").DataTable().ajax.reload();
+                Swal.fire(
+                    'Good job!',
+                    'Student Deleted Successfully !',
+                    'success'
+                    );
+            }
+        })
     }else{
         Swal.fire({
             type: 'error',
