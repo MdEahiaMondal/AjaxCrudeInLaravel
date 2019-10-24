@@ -13,6 +13,7 @@
 
 
 
+
 {{--Preview Image Before Upload Using JavaScript--}}
 <script type='text/javascript'>
     function preview_image(event)

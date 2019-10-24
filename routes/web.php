@@ -71,6 +71,8 @@ Route::resource('categories','CategoryController');
 
 
 // post and Comment
+Route::post('posts/like','PostController@postLike')->name('post.like');
+Route::post('posts/dislike','PostController@postDislike')->name('post.dislike');
 Route::resource('posts','PostController');
 Route::resource('comments','CommentController');
 

@@ -33,6 +33,9 @@
         .replayFormHidden{
             display: none;
         }
+        .user-comment-box {
+            display: none;
+        }
 
 </style>
 
@@ -48,12 +51,88 @@
                             {{ $post->body }}
                         </p>
                         <hr />
-                        <div class="row">
 
+                       {{-- @php
+                            $likeCount = 0;
+                            $dislikeCount = 0;
+                        $likeStatus = "btn-secondary";
+                        $dislikeStatus = "btn-secondary";
+                        @endphp
+
+                        @foreach($post->like as $LIKE)
+
+                            @php
+                                if($LIKE->like == 1){
+                                    $likeCount++;
+                                }
+
+                            if ($LIKE->like == 0){
+                                    $dislikeCount++;
+                                }
+
+
+                            if (Auth::check()){
+                                if ($LIKE->like == 1 && $LIKE->user_id == Auth()->id()){
+                                    $likeStatus = "attrActice";
+                                }
+
+                                if ($LIKE->like == 0 && $LIKE->user_id == Auth()->id()){
+                                    $dislikeStatus = "btn btn-danger";
+                                }
+                            }
+
+                            @endphp
+
+
+                        @endforeach
+
+--}}
+
+
+                        @php
+
+                            $likeCount = 0;
+                            $dislikeCount = 0;
+
+                        $likeButton = "btn-secondary";
+                        $disLikeButton = "btn-secondary";
+                        @endphp
+
+                        @foreach($post->like as $singLike)
+
+                            @php
+                                if ($singLike->like ==1){
+                                    $likeCount++;
+                                }
+
+                                if ($singLike->like == 0){
+                                    $dislikeCount++;
+                                }
+
+                            if(auth()->check()){
+                                if ($singLike->like == 1 && $singLike->user_id == Auth()->id()){
+                                    $likeButton = "attrActice";
+                                }
+                                if ($singLike->like == 0 && $singLike->user_id == Auth()->id()){
+                                    $disLikeButton = "attrActice";
+                                }
+                            }
+
+                            @endphp
+
+                         @endforeach
+
+
+
+                        <div class="row">
                             <div class="col-sm-4 text-center postLikeUnlike">
                                 <p>
-                                    <a class="btn btn-sm attrActice like"><i class="fa fa-thumbs-up fa-sm"></i> <span style="font-size: medium">Like <span>10</span> </span></a>
-                                    <a class="btn btn-sm unlike"><i class="fa fa-thumbs-down"></i> <span style="font-size: medium">Unlike <span>5</span> </span> </a>
+                                    <a id="like" class="btn btn-sm {{ $likeButton }}" data-postid="{{ $post->id }}_l">
+                                        <i class="fa fa-thumbs-up fa-sm"></i> <span style="font-size: medium">Like <span class="LikeCount"> {{ $likeCount }} </span> </span>
+                                    </a>
+                                    <a id="dislike"  class="btn btn-sm {{ $disLikeButton }}" data-postid="{{ $post->id }}_d">
+                                        <i class="fa fa-thumbs-down"></i> <span style="font-size: medium">Unlike <span class="dislikeCount"> {{ $dislikeCount }} </span> </span>
+                                    </a>
                                 </p>
                             </div>
 
@@ -64,10 +143,13 @@
                             <div class="col-sm-4 text-center btn btn-sm comment">
                                 <p>Share</p>
                             </div>
-
                         </div>
                         <hr>
+
+
+
                         @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
+
 
                         <hr class="top0"/>
                         <h4>Add comment</h4>
@@ -92,6 +174,16 @@
 
 @section('script')
 
+    {{--// like and unlike for post --}}
+    <script>
+        var likeUrl = "{{ route('post.like') }}";
+        var disLikeUrl = "{{ route('post.dislike') }}";
+        var token = "{{ Session::token() }}";
+    </script>
+<script src="{{ asset('customJs/like.js') }}"></script> {{--// for tree view--}}
+
+
+
     <script>
        $(document).ready(function(){
 
@@ -114,6 +206,34 @@
                }
            });
            // close only text show more and less
+
+
+           $(function() {
+               $(".comment-box").each(function(index) {
+                   $(this).children(".user-comment-box").slice(-2).show();
+               });
+
+
+               $(".see-more").click(function(e) {
+                   e.preventDefault();
+                   var $link = $(this);
+                   var $div = $link.closest('.comment-box');
+
+                   if ($link.hasClass('visible')) {
+                       $link.text('Show all comments');
+                       $div.children(".user-comment-box").slice(0, -2).slideUp()
+                   } else {
+                       $link.text('Show less comments');
+                       $div.children(".user-comment-box").slideDown();
+                   }
+
+                   $link.toggleClass('visible');
+               });
+           });
+
+
+
+
 
 
         });

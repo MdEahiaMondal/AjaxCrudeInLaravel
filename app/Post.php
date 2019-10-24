@@ -20,4 +20,9 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
+
+    public function like()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

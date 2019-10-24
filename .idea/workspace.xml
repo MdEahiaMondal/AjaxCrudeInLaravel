@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Like.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_23_073519_create_likes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customJs/like.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parcials/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/commentsDisplay.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/commentsDisplay.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +233,9 @@
       <workItem from="1571672650630" duration="1176000" />
       <workItem from="1571717171831" duration="3542000" />
       <workItem from="1571748640707" duration="6849000" />
-      <workItem from="1571787244993" duration="16922000" />
+      <workItem from="1571787244993" duration="40855000" />
+      <workItem from="1571885955391" duration="365000" />
+      <workItem from="1571901760719" duration="5011000" />
     </task>
     <task id="LOCAL-00001" summary="edit successfully done with ajax in profile">
       <created>1570845897714</created>
@@ -255,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571800797800</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="text show more and less done by js">
+      <created>1571806857616</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571806857616</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +297,7 @@
     <MESSAGE value="image and item deleted successfully done with ajax in profile" />
     <MESSAGE value="line going to right position" />
     <MESSAGE value="change the desine in comment system" />
-    <option name="LAST_COMMIT_MESSAGE" value="change the desine in comment system" />
+    <MESSAGE value="text show more and less done by js" />
+    <option name="LAST_COMMIT_MESSAGE" value="text show more and less done by js" />
   </component>
 </project>

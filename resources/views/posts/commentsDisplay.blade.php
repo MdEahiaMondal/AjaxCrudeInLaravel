@@ -19,8 +19,12 @@
 @endforeach--}}
 
 
+<div class="comment-box-container">
+    <div class="comment-box">
+
+
 @foreach($comments as $comment)
-    <div class="display-comment CommentReplay" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
+    <div class="display-comment CommentReplay user-comment-box" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
         <strong>{{ $comment->user->name }}</strong>
         <p>{{ $comment->body }}</p>
         <p>
@@ -42,6 +46,14 @@
         </div>
         @include('posts.commentsDisplay', ['comments' => $comment->replies])
     </div>
+
 @endforeach
+
+    <a href="#" class="see-more">Show all comments</a>
+
+</div>
+</div>
+
+
 
 
