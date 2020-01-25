@@ -52,43 +52,6 @@
                         </p>
                         <hr />
 
-                       {{-- @php
-                            $likeCount = 0;
-                            $dislikeCount = 0;
-                        $likeStatus = "btn-secondary";
-                        $dislikeStatus = "btn-secondary";
-                        @endphp
-
-                        @foreach($post->like as $LIKE)
-
-                            @php
-                                if($LIKE->like == 1){
-                                    $likeCount++;
-                                }
-
-                            if ($LIKE->like == 0){
-                                    $dislikeCount++;
-                                }
-
-
-                            if (Auth::check()){
-                                if ($LIKE->like == 1 && $LIKE->user_id == Auth()->id()){
-                                    $likeStatus = "attrActice";
-                                }
-
-                                if ($LIKE->like == 0 && $LIKE->user_id == Auth()->id()){
-                                    $dislikeStatus = "btn btn-danger";
-                                }
-                            }
-
-                            @endphp
-
-
-                        @endforeach
-
---}}
-
-
                         @php
 
                             $likeCount = 0;
@@ -146,8 +109,6 @@
                         </div>
                         <hr>
 
-
-
                         @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
 
 
@@ -181,6 +142,7 @@
         var token = "{{ Session::token() }}";
     </script>
 <script src="{{ asset('customJs/like.js') }}"></script> {{--// for tree view--}}
+    {{--// end like and unlike for post --}}
 
 
 
@@ -208,7 +170,7 @@
            // close only text show more and less
 
 
-           $(function() {
+     /*      $(function() {
                $(".comment-box").each(function(index) {
                    $(this).children(".user-comment-box").slice(-2).show();
                });
@@ -229,7 +191,7 @@
 
                    $link.toggleClass('visible');
                });
-           });
+           });*/
 
 
 

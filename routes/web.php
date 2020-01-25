@@ -53,6 +53,7 @@ Route::post('dynamicdependent/fetch','DynamicDependentController@fetch')->name('
 // part(2)
 Route::get('dynamicdependentpart2','DynamicDependentController@Dynamicfieldpart2');
 Route::post('select/fieldItem','DynamicDependentController@fieldItem')->name('select.fieldItem');
+Route::get('create/dynamic/input-field/with/input-value','DynamicDependentController@dynamicInputFieldWithValue');
 
 /*................end dynamicdependent select field Route............*/
 
@@ -79,6 +80,7 @@ Route::resource('comments','CommentController');
 
 
 Route::get('jquery-tree-view',array('as'=>'jquery.treeview','uses'=>'TreeController@treeView'));
+
 
 
 

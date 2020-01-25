@@ -1,4 +1,4 @@
-{{--@foreach($comments as $comment)
+@foreach($comments as $comment)
     <div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
         <strong>{{ $comment->user->name }}</strong>
         <p>{{ $comment->body }}</p>
@@ -16,9 +16,9 @@
         </form>
         @include('posts.commentsDisplay', ['comments' => $comment->replies])
     </div>
-@endforeach--}}
+@endforeach
 
-
+{{--
 <div class="comment-box-container">
     <div class="comment-box">
 
@@ -31,7 +31,7 @@
             <span class="btn btn-sm replayLike">Like</span>
             <span><a class="btn btn-sm singleCommentReply" data-id="{{ $comment->id }}"  id="singleCommentReply">Replay</a></span>
         </p>
-        <div class="{{--replayFormHidden--}}">
+        <div class="--}}{{--replayFormHidden--}}{{--">
             <form method="post" class="" data-id="{{ $comment->id }}" id="ReplayForm" action="{{ route('comments.store') }}">
                 @csrf
                 <div class="form-group">
@@ -52,7 +52,7 @@
     <a href="#" class="see-more">Show all comments</a>
 
 </div>
-</div>
+</div>--}}
 
 
 

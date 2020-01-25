@@ -105,6 +105,13 @@ class DynamicDependentController extends Controller
     }
 
 
+    public function dynamicInputFieldWithValue()
+    {
+        return view('add_dynamicField_By_inputValue.dynamic_with_input_value');
+    }
+
+
+
 
 
 }
