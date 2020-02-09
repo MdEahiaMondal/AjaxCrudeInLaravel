@@ -25,6 +25,7 @@ Route::get('checkbox/ItemDelete','StudentController@CheKDelete')->name('checkbox
 // create dynamic field Its Route
 Route::get('dynamic-field','DynamicFieldController@showForm');
 Route::post('dynamic-field','DynamicFieldController@insert')->name('dynamic_field.insert');
+Route::resource('invoice','InvoiceController');
 
 
 // customer Route

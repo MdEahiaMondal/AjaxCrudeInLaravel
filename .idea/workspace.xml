@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f218fc8-741c-4188-b083-2774aff61ef5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/add_dynamicField_By_inputValue/dynamic_with_input_value.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AjaxCrudeInLaravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AjaxCrudeInLaravel.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_09_150603_create_invoices_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Invoice Dynamic Table/dynamic_field.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DynamicDependentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DynamicDependentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/commentsDisplay.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/commentsDisplay.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +138,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -154,6 +153,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\xampp\htdocs\runningGitHub project\AjaxCrudeInLaravel\resources\views" />
       <recent name="F:\xampp\htdocs\runningGitHub project\AjaxCrudeInLaravel\database\migrations" />
       <recent name="F:\xampp\htdocs\runningGitHub project\AjaxCrudeInLaravel\resources\views\treeView" />
       <recent name="F:\xmp\xm\htdocs\runningGitHub project\AjaxCrudeInLaravel\resources\views\layouts" />
@@ -245,7 +245,8 @@
       <workItem from="1574483335382" duration="4935000" />
       <workItem from="1576945553876" duration="1434000" />
       <workItem from="1576975033322" duration="55000" />
-      <workItem from="1579970116690" duration="1381000" />
+      <workItem from="1579970116690" duration="2217000" />
+      <workItem from="1581260516501" duration="7258000" />
     </task>
     <task id="LOCAL-00001" summary="edit successfully done with ajax in profile">
       <created>1570845897714</created>
@@ -317,5 +318,11 @@
     <MESSAGE value="text show more and less done by js" />
     <MESSAGE value="like and unlike system done" />
     <option name="LAST_COMMIT_MESSAGE" value="like and unlike system done" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="423" y="23" key="CommitChangelistDialog2" timestamp="1581267945594">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="423" y="23" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1581267945594" />
   </component>
 </project>
